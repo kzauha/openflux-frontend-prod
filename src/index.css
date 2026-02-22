@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OpenFlux Research - Institutional Quant Design System
+   Dark Mode / Terminal / Data Aesthetic
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Background - Deep Black */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    /* Card - Slightly elevated surface */
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    /* Popover */
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - White for high contrast */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
+
+    /* Secondary - Zinc Gray */
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 85%;
+
+    /* Muted - Darker zinc for subtle elements */
+    --muted: 240 4% 12%;
+    --muted-foreground: 240 5% 55%;
+
+    /* Accent - Emerald Green for data highlights */
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border - Subtle zinc */
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 160 84% 39%;
+
+    /* Sharp corners for institutional look */
+    --radius: 0px;
+
+    /* Data accent colors */
+    --data-positive: 160 84% 39%;
+    --data-neutral: 240 5% 55%;
+    --data-highlight: 160 60% 45%;
+
+    /* Grid background pattern */
+    --grid-color: 240 4% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  /* Monospace utility class for data/code */
+  .font-mono {
+    font-family: "JetBrains Mono", "Courier New", monospace;
+  }
+
+  /* Grid background pattern */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Subtle grid for sections */
+  .bg-grid-subtle {
+    background-image:
+      linear-gradient(
+        to right,
+        hsl(var(--grid-color) / 0.5) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(var(--grid-color) / 0.5) 1px,
+        transparent 1px
+      );
+    background-size: 80px 80px;
+  }
+
+  /* Data positive color (emerald) */
+  .text-data-positive {
+    color: hsl(var(--data-positive));
+  }
+
+  /* Terminal-style cursor blink */
+  @keyframes cursor-blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-cursor {
+    animation: cursor-blink 1s infinite;
+  }
+
+  /* Subtle hover lift for cards */
+  .hover-lift {
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    border-color: hsl(var(--accent) / 0.3);
+  }
+}
+
+@layer components {
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 lg:px-8;
+  }
+
+  /* Terminal card style */
+  .terminal-card {
+    @apply bg-card border border-border p-6;
+  }
+
+  /* Metric display */
+  .metric-value {
+    @apply font-mono text-2xl lg:text-3xl font-semibold tracking-tight;
+  }
+
+  .metric-label {
+    @apply font-mono text-xs uppercase tracking-widest text-muted-foreground mt-1;
+  }
+}
