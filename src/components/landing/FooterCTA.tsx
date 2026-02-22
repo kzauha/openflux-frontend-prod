@@ -100,8 +100,8 @@ const FooterCTA = () => {
             © 2025 OpenFlux Research // Quantitative Research Infrastructure, v0.1 beta
           </div>
           <div className="flex gap-8 font-mono text-[10px] text-gray-500 uppercase tracking-tighter">
-            <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

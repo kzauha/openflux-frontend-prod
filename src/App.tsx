@@ -7,6 +7,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import Docs from "./pages/Docs";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import DesignSystem from "./pages/DesignSystem";
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/docs" element={<Docs />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/design-system" element={<DesignSystem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
