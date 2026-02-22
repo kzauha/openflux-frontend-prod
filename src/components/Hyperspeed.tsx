@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import * as THREE from 'three';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPreset } from 'postprocessing';
 
@@ -43,14 +43,14 @@ const DEFAULT_EFFECT_OPTIONS = {
   }
 };
 
-const Hyperspeed: React.FC<HyperspeedProps> = ({ effectOptions = DEFAULT_EFFECT_OPTIONS }) => {
+const Hyperspeed: React.FC<HyperspeedProps> = memo(({ effectOptions = DEFAULT_EFFECT_OPTIONS }) => {
   const hyperspeed = useRef<HTMLDivElement>(null);
   const appRef = useRef<any>(null);
 
   useEffect(() => {
     if (appRef.current) {
       appRef.current.dispose();
-      const container = document.getElementById('lights');
+      const container = hyperspeed.current;
       if (container) {
         while (container.firstChild) {
           container.removeChild(container.firstChild);
@@ -437,7 +437,8 @@ const Hyperspeed: React.FC<HyperspeedProps> = ({ effectOptions = DEFAULT_EFFECT_
         this.onTouchEnd = this.onTouchEnd.bind(this);
         this.onContextMenu = this.onContextMenu.bind(this);
 
-        window.addEventListener('resize', this.onWindowResize.bind(this));
+        this.onWindowResize = this.onWindowResize.bind(this);
+        window.addEventListener('resize', this.onWindowResize);
       }
 
       onWindowResize() {
@@ -609,7 +610,7 @@ const Hyperspeed: React.FC<HyperspeedProps> = ({ effectOptions = DEFAULT_EFFECT_
           this.scene.clear();
         }
 
-        window.removeEventListener('resize', this.onWindowResize.bind(this));
+        window.removeEventListener('resize', this.onWindowResize);
         if (this.container) {
           this.container.removeEventListener('mousedown', this.onMouseDown);
           this.container.removeEventListener('mouseup', this.onMouseUp);
@@ -1153,7 +1154,7 @@ const Hyperspeed: React.FC<HyperspeedProps> = ({ effectOptions = DEFAULT_EFFECT_
     };
   }, [effectOptions]);
 
-  return <div id="lights" ref={hyperspeed}></div>;
-};
+  return <div id="lights" ref={hyperspeed} style={{ willChange: "transform" }}></div>;
+});
 
 export default Hyperspeed;

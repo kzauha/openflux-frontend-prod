@@ -1,13 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { Activity, ShieldCheck, BarChart3 } from "lucide-react";
 
-const StrategyMinerChat = () => {
-  const [phase, setPhase] = useState<"typing" | "processing" | "response">("typing");
+const StrategyMinerChat = memo(() => {
+  const [phase, setPhase] = useState<"typing" | "processing" | "response">(
+    "typing"
+  );
   const [typedText, setTypedText] = useState("");
-  
+
   const userQuery = "Can you find me a BTC 4h strategy with the least drawdown?";
-  
+
   // Typewriter effect
   useEffect(() => {
     if (phase === "typing") {
@@ -22,7 +24,7 @@ const StrategyMinerChat = () => {
       }
     }
   }, [phase, typedText]);
-  
+
   // Processing phase
   useEffect(() => {
     if (phase === "processing") {
@@ -30,7 +32,7 @@ const StrategyMinerChat = () => {
       return () => clearTimeout(timeout);
     }
   }, [phase]);
-  
+
   // Loop the animation
   useEffect(() => {
     if (phase === "response") {
@@ -49,6 +51,7 @@ const StrategyMinerChat = () => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
+        style={{ willChange: "transform, opacity" }}
       >
         {/* Header content unchanged */}
         <div className="border-b border-white/5 px-4 py-3 flex items-center justify-between bg-white/5">
@@ -227,6 +230,6 @@ const StrategyMinerChat = () => {
       </AnimatePresence>
     </div>
   );
-};
+});
 
 export default StrategyMinerChat;
