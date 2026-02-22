@@ -218,9 +218,9 @@ const StrategyMinerChat = memo(() => {
       <AnimatePresence>
         {phase === "response" && (
           <motion.p
-            className="mt-4 text-[11px] font-mono text-gray-500 text-center tracking-tight opacity-50"
+            className="mt-4 text-[11px] font-mono text-gray-400 text-center tracking-tight"
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 0.5, y: 0 }}
+            animate={{ opacity: 0.6, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4 }}
           >
