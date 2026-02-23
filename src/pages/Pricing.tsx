@@ -64,14 +64,14 @@ const Pricing = () => {
                 <div className="text-right">
                   <div className="flex items-baseline justify-end gap-2">
                     <span className="text-muted-foreground line-through text-lg font-mono opacity-50">
-                      $399
+                      $499
                     </span>
                     <span className="text-5xl font-bold font-mono text-accent">
                       $249
                     </span>
                   </div>
-                  <p className="text-[10px] text-muted-foreground font-mono mt-1 uppercase tracking-tighter">
-                    One-time payment
+                  <p className="text-[15px] text-muted-foreground font-mono mt-1 uppercase tracking-tighter">
+                    ONE-TIME
                   </p>
                 </div>
               </div>
@@ -104,7 +104,7 @@ const Pricing = () => {
                   </div>
                   <p className="text-[11px] text-muted-foreground leading-relaxed italic">
                     OpenFlux Beta currently exclusively handles <span className="text-white font-medium">Long positions</span>. 
-                    Shorts and advanced portfolio optimization are coming in v1 ($399).
+                    Shorts and advanced portfolio optimization are coming in v1 ($499).
                   </p>
                 </div>
                 <div className="flex gap-3">
