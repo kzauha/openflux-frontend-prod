@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+
 const MotionLink = motion(Link);
 
 const Navbar = () => {
@@ -32,17 +33,13 @@ const Navbar = () => {
           <Link to="/docs" className="font-mono text-[11px] font-bold text-gray-400 hover:text-white transition-all hover:tracking-widest uppercase tracking-widest">
             Docs
           </Link>
-          <Link to="/pricing" className="font-mono text-[11px] font-bold text-gray-400 hover:text-white transition-all hover:tracking-widest uppercase tracking-widest relative group">
-            Pricing
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-          </Link>
         </div>
 
         {/* CTA */}
         <div className="flex items-center gap-4">
-           <Link to="/pricing">
+           <Link to="/access">
              <Button className="bg-white text-black hover:bg-gray-200 font-mono text-xs font-black uppercase tracking-widest px-6 h-9 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-               Get Started
+               Contact Us
              </Button>
            </Link>
         </div>

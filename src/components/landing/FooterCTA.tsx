@@ -26,7 +26,7 @@ const FooterCTA = () => {
                </span>
             </div>
             <p className="text-gray-300 text-base leading-relaxed max-w-sm">
-              Quantitative Research Infrastructure, v0.1 beta.
+              Quantitative Research Infrastructure.
             </p>
           </motion.div>
 
@@ -45,9 +45,9 @@ const FooterCTA = () => {
                 Engine
               </div>
               <div className="space-y-4">
-                {["Overview", "Pricing", "Docs", "Beta"].map((item) => (
-                  <Link key={item} to={item === "Pricing" ? "/pricing" : "/"} className="block text-sm text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">
-                    {item}
+                {[{ label: "Overview", to: "/" }, { label: "Docs", to: "/docs" }].map((item) => (
+                  <Link key={item.label} to={item.to} className="block text-sm text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">
+                    {item.label}
                   </Link>
                 ))}
               </div>
@@ -97,7 +97,7 @@ const FooterCTA = () => {
         {/* Bottom Bar */}
         <div className="mt-20 pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
           <div className="font-mono text-[10px] text-gray-600 uppercase tracking-widest">
-            © 2025 OpenFlux Research // Quantitative Research Infrastructure, v0.1 beta
+            © 2025 OpenFlux Research // Quantitative Research Infrastructure
           </div>
           <div className="flex gap-8 font-mono text-[10px] text-gray-500 uppercase tracking-tighter">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

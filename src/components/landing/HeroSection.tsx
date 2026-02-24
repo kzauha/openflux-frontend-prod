@@ -22,10 +22,10 @@ const HeroSection = () => {
 
             {/* Sub-headline */}
             <p className="text-lg md:text-xl text-gray-200 font-medium max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]">
-              OpenFlux is a strategy research sandbox that runs on your machine. It does the maths, you be the quant.
+              OpenFlux is an institutional quantitative research engine that runs on servers. It discovers, refines and verifies edges.
             </p>
             <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]">
-              Experiment, discover, refine and verify your own edges. Get once, keep forever.
+              Fully customized configurations, with ready-to-export rules.
             </p>
 
             {/* CTA Button */}
@@ -34,9 +34,9 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <Link to="/pricing">
+              <Link to="/access">
                 <Button variant="hero" size="lg">
-                  Get Beta Access
+                  Contact Us
                 </Button>
               </Link>
             </motion.div>
@@ -45,12 +45,7 @@ const HeroSection = () => {
             <div className="mt-12 font-mono text-xs text-muted-foreground flex items-center justify-center lg:justify-start gap-6">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-accent" />
-                <span>v0.1 beta</span>
-              </span>
-              <span className="text-border">|</span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-accent" />
-                <span>Currently crypto only. FX/Stocks coming in v1 launch</span>
+                <span>Institutional Research Infrastructure</span>
               </span>
             </div>
           </motion.div>

@@ -114,18 +114,7 @@ const Docs = () => {
             ))}
           </div>
 
-          {/* Bottom note */}
-          <motion.div
-            className="mt-20 border-t border-border pt-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm text-muted-foreground italic">
-              This is a living document. More sections will be added as the architecture evolves.
-              If you have questions or found something that doesn't add up — reach out. That's the point.
-            </p>
-          </motion.div>
+
         </div>
       </section>
 

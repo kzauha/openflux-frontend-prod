@@ -32,7 +32,7 @@ const colors = [
 ];
 
 const components = [
-  { name: "Navbar", file: "landing/Navbar.tsx", purpose: "Fixed top nav with logo + Docs/Pricing links" },
+  { name: "Navbar", file: "landing/Navbar.tsx", purpose: "Fixed top nav with logo + Docs links" },
   { name: "HeroSection", file: "landing/HeroSection.tsx", purpose: "Split layout: headline left + StrategyMinerChat right" },
   { name: "StrategyMinerChat", file: "landing/StrategyMinerChat.tsx", purpose: "Animated LLM chat demo (typewriter → processing → results)" },
   { name: "ProblemSection", file: "landing/ProblemSection.tsx", purpose: "2×2 grid of backtesting flaws + stat bar" },
@@ -292,7 +292,7 @@ const DesignSystem = () => {
                 </div>
                 <div>
                   <div className="text-foreground font-medium mb-1">Status Line</div>
-                  <pre className="text-muted-foreground font-mono text-xs whitespace-pre-wrap">{`v0.0.1 beta | Currently crypto only. FX/Stocks coming in v1 launch`}</pre>
+                  <pre className="text-muted-foreground font-mono text-xs whitespace-pre-wrap">{`Institutional Research Sandbox`}</pre>
                 </div>
                 <div>
                   <div className="text-foreground font-medium mb-1">Problem Section Title</div>
@@ -323,49 +323,7 @@ Median Profit Factor: 2.3 top decile strategies`}</pre>
               </div>
             </div>
 
-            {/* Pricing */}
-            <div className="border border-border bg-card p-6 mb-6">
-              <div className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-4">Pricing — /pricing</div>
-              <div className="space-y-4 text-sm">
-                <div>
-                  <div className="text-foreground font-medium mb-1">Header</div>
-                  <pre className="text-muted-foreground font-mono text-xs whitespace-pre-wrap">{`Get In Early
-You're not joining a waitlist. Full product access.`}</pre>
-                </div>
-                <div>
-                  <div className="text-foreground font-medium mb-1">Beta Tier</div>
-                  <pre className="text-muted-foreground font-mono text-xs whitespace-pre-wrap">{`OpenFlux Beta — $99 one-time · first 5 spots ($249 after)
-• Lifetime access — pay once, keep forever
-• All future versions included
-• 30-day refund if it's broken or useless
-• Future price: $99/month — you'll never pay that`}</pre>
-                </div>
-                <div>
-                  <div className="text-foreground font-medium mb-1">Source Licensing</div>
-                  <pre className="text-muted-foreground font-mono text-xs whitespace-pre-wrap">{`Reconfigure it for your own use cases — or let me
-build a customized version for your world.
-• Full source access
-• Custom asset universes
-• Dedicated configuration`}</pre>
-                </div>
-                <div>
-                  <div className="text-foreground font-medium mb-1">Founder's Note</div>
-                  <pre className="text-muted-foreground font-mono text-xs whitespace-pre-wrap">{`For the skeptics —
-I know how it sounds. Another backtest tool. Another promise.
-But it's not. Here's the actual architecture:
-→ Separation of times — Oracle/observer split
-→ Shared kernel — Same code trains and validates
-→ Unbiased labelling — Every bar gets labelled
-→ Decision trees — Interpretable rules. Not a black box
-
-I wrote 10,000 words explaining how it works.
-Read the docs. Find a flaw. I'll fix it or refund you.
-
-Why $99? Because it's early, it can have bugs, and I need
-real users to make it better.`}</pre>
-                </div>
-              </div>
-            </div>
+            {/* Pricing removed */}
 
             {/* Docs */}
             <div className="border border-border bg-card p-6">

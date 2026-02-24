@@ -1,10 +1,9 @@
 import React from "react";
 import Navbar from "@/components/landing/Navbar";
 import FooterCTA from "@/components/landing/FooterCTA";
-import ScrollArrow from "@/components/landing/ScrollArrow";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Check, Mail, Cloud, Server, ArrowRight } from "lucide-react";
+import { Check, Server, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Pricing = () => {
@@ -22,21 +21,17 @@ const Pricing = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="font-mono text-xs text-muted-foreground mb-4 tracking-widest uppercase">
-              Limited Beta Release
+              Institutional Licensing
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
               Own the Engine <span className="text-accent underline decoration-accent/20 underline-offset-8">Forever.</span>
             </h1>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-              OpenFlux is a strategy research sandbox tool, designed to democratize quant research infrastructure to non-quant people. 
-              Completely own the product, stop falling for signal selling scam, and make more informed trades.
-            </p>
-            <p className="text-accent font-mono text-sm mt-4 uppercase tracking-[0.2em]">
-              -- Or just use it to learn the market, you decide --
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              OpenFlux is licensed as a perpetual institutional research tool. One deployment. Your infrastructure. Your data.
             </p>
           </motion.div>
 
-          {/* Pricing Card - Centered Single Product */}
+          {/* Pricing Card */}
           <div className="max-w-xl mx-auto">
             <motion.div
               className="border-2 border-accent bg-card p-8 md:p-12 relative shadow-[0_32px_64px_-16px_rgba(16,185,129,0.1)]"
@@ -45,7 +40,7 @@ const Pricing = () => {
               transition={{ delay: 0.1, duration: 0.5 }}
             >
               <div className="absolute top-0 right-0 bg-accent text-background font-mono text-xs px-4 py-1.5 font-bold uppercase tracking-widest">
-                Beta Access
+                Perpetual License
               </div>
 
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -57,10 +52,10 @@ const Pricing = () => {
                     </h2>
                   </div>
                   <p className="text-muted-foreground text-sm font-mono uppercase tracking-widest text-glow-emerald">
-                    Lifetime Access
+                    Lifetime Access · Local Deployment
                   </p>
                 </div>
-                
+
                 <div className="text-right">
                   <div className="flex items-baseline justify-end gap-2">
                     <span className="text-muted-foreground line-through text-lg font-mono opacity-50">
@@ -78,10 +73,11 @@ const Pricing = () => {
 
               <div className="space-y-4 mb-10">
                 {[
-                  "Own the Engine forever",
+                  "Runs entirely on your machine",
                   "Unlimited strategy mining",
-                  "Complete access to sandbox",
-                  "Lifetime support, bug fixes",
+                  "Fully customized configurations",
+                  "Ready-to-export decision rules",
+                  "Lifetime support & updates",
                   "Free upgrade to future versions",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-4">
@@ -93,83 +89,20 @@ const Pricing = () => {
                 ))}
               </div>
 
-              <Button variant="hero" size="lg" className="w-full text-base h-14 shadow-[0_8px_20px_rgba(16,185,129,0.2)]">
-                Claim Early Bird Access
-              </Button>
-              
-              <div className="mt-8 pt-6 border-t border-white/5 space-y-4">
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-accent/5 border border-accent/10 flex items-center justify-center shrink-0">
-                    <span className="text-[10px] font-bold text-accent">/</span>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                    OpenFlux Beta currently exclusively handles <span className="text-white font-medium">Long positions</span>. 
-                    Shorts and advanced portfolio optimization are coming in v1 ($499).
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-accent/5 border border-accent/10 flex items-center justify-center shrink-0">
-                    <span className="text-[10px] font-bold text-accent">/</span>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                    Beta users get a <span className="text-white font-medium">free upgrade</span> to v1. We are offering this early discount in exchange for your feedback.
-                  </p>
-                </div>
+              <Link to="/access">
+                <Button variant="hero" size="lg" className="w-full text-base h-14 shadow-[0_8px_20px_rgba(16,185,129,0.2)] gap-2">
+                  Request Institutional Access
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+
+              <div className="mt-8 pt-6 border-t border-white/5">
+                <p className="text-[11px] text-muted-foreground leading-relaxed italic text-center">
+                  Access is granted on a by-request basis. Submit your research context via the access form and we will follow up directly.
+                </p>
               </div>
             </motion.div>
           </div>
-
-          {/* Scroll Arrow */}
-          <ScrollArrow />
-
-          {/* Founder's Note */}
-          <motion.div
-            className="max-w-2xl mx-auto mt-20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            <div className="border border-border/60 bg-card/50 p-8 lg:p-10 relative">
-              <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-6 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-accent" />
-                Founder's Note
-              </div>
-
-              <div className="space-y-6 text-[15px] leading-relaxed text-muted-foreground">
-                <p className="text-foreground font-medium text-lg">
-                  For the skeptics —
-                </p>
-                <p>
-                  I know how it sounds. There are a lot of signal selling scams in the market
-                </p>
-                <p>
-                  OpenFlux was built to filter them out. By design, it prevents overfit, look-ahead, repainting and other common enemies, where the 10x money backtests are born. This is a honest system, designed for research.
-                </p>
-                <p>
-                  It is fully customizable, and is always real time and adaptive. It will work the same 5 years from now despite market changes. I'll fix it if it isnt.
-                </p>
-                <p>
-                  I have written down the architecture. Read the docs. Find a flaw. I'll fix it or refund you.
-                </p>
-
-                <div className="pt-4">
-                  <Link to="/docs">
-                    <Button variant="hero" size="default">
-                      Technical Docs →
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-border/40">
-                <p className="text-sm text-muted-foreground italic">
-                  Why $249? Because it's Beta, it exclusively handles Long positions for now, and I need users to help me break it.
-                  In exchange for your feedback, you get everything forever — including the v1 upgrade with shorts and portfolio optimization.
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
